@@ -1,14 +1,8 @@
-# Railway build configuration for NestJS monorepo
-# Prevents exit code 127 errors (nest command not found)
-
-[phases.install]
-# CRITICAL: Include devDependencies for @nestjs/cli
-cmds = ["npm install --include=dev"]
+[phases.setup]
+nixPkgs = ["nodejs-22_x", "npm"]
 
 [phases.build]
-# Build all workspaces
-cmds = ["npm run build"]
+cmds = ["npm ci --include=dev", "npm run build"]
 
 [start]
-# Start API server
 cmd = "cd apps/api && npm run start:prod"
