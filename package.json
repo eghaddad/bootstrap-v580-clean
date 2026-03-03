@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap-v580-clean",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@10.0.0",
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "overrides": {
+    "multer": "2.1.0",
+    "fastify": "5.7.4",
+    "@fastify/middie": "9.2.0",
+    "@nestjs/platform-fastify": "11.1.14"
+  }
+}
